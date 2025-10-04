@@ -45,7 +45,7 @@ six==1.17.0
 sympy==1.14.0
 threadpoolctl==3.6.0
 timm==1.0.15
-torch==2.7.1
+torch==2.8.0
 torchvision==0.22.1
 tqdm==4.67.1
 triton==3.3.1
