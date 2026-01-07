@@ -1,74 +1,106 @@
 <div align="center">
 
-# CNN Architectures Benchmark
+# 🧠 CNN Architectures Benchmark
 
-![GitHub repo size](https://img.shields.io/github/repo-size/Avijit-Jana/cnn-architectures-benchmark?style=plastic)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Avijit-Jana/cnn-architectures-benchmark?style=plastic)
 ![GitHub language count](https://img.shields.io/github/languages/count/Avijit-Jana/cnn-architectures-benchmark?style=plastic)
 ![GitHub top language](https://img.shields.io/github/languages/top/Avijit-Jana/cnn-architectures-benchmark?style=plastic)
-![GitHub last commit](https://img.shields.io/github/last-commit/Avijit-Jana/cnn-architectures-benchmark?color=red&style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/Avijit-Jana/cnn-architectures-benchmark?color=red\&style=plastic)
 
 </div>
 
-## Table of Contents
+A systematic benchmarking study of **classical and modern Convolutional Neural Network (CNN) architectures** across datasets of increasing visual complexity.
 
-- [📖**Project Description**](#project-description)
-- [🧑‍💼**Business Use Cases**](#business-use-cases)
-- [📁**Data Set Explanation**](#data-set-explanation)
-- [**📊Project Evaluation Metrics**](#project-evaluation-metrics)
-- [**🚩How to Approach this Project**](#how-to-approach-this-project)
+The goal is simple: understand *how architecture choices behave under different data regimes*, and what trade-offs emerge between accuracy, complexity, and generalization.
 
-## 📖Project Description
+---
 
-The goal of this project is to compare the performance of different CNN architectures on
-various datasets. Specifically, we will evaluate LeNet-5, AlexNet, GoogLeNet, VGGNet,
-ResNet, Xception, and SENet on MNIST, FMNIST, and CIFAR-10 datasets. The comparison
-will be based on metrics such as loss curves, accuracy, precision, recall, and F1-score.
-Comparison of CNN architectures (LeNet-5, AlexNet, GoogLeNet, VGGNet, ResNet, Xception, SENet) on MNIST, FMNIST, and CIFAR-10 datasets. Evaluates performance using loss curves, accuracy, precision, recall, and F1-score. Implemented with TensorFlow and PyTorch.
+## 🧠 Project Overview
 
-## 🧑‍💼Business Use Cases
+CNN architectures are often compared in isolation or on a single dataset. This project takes a more **comparative and educational approach**.
 
-The insights from this project can be applied in various business scenarios, including:
+Multiple CNN families—ranging from early designs to deeper, attention-enhanced networks—are trained and evaluated on datasets that vary in resolution, color depth, and semantic complexity.
 
-- Choosing the appropriate CNN architecture for specific computer vision tasks.
-- Improving model performance by understanding the impact of dataset characteristics.
-- Optimizing resource allocation by selecting models that offer the best trade-off between performance and computational cost.
-- Identifying potential trade-offs between model complexity and performance.
-- Understanding the impact of dataset characteristics on model performance.
+The result is a clear, side-by-side view of **where each architecture shines and where it struggles**.
 
-## 📁Data Set Explanation
+---
 
-**The datasets used in this project are:**
+## 🧑‍💼 Why This Matters (Practical Relevance)
 
-- **MNIST**: Handwritten digits dataset consisting of 60,000 training images and 10,000 testing images. Each image is 28x28 pixels in grayscale.
-- **FMNIST**: Fashion MNIST dataset consisting of 60,000 training images and 10,000 testing images of fashion products. Each image is 28x28 pixels in grayscale.
-- **CIFAR-10**: Dataset consisting of 60,000 32x32 color images in 10 classes, with 50,000 training images and 10,000 testing images.
+In real-world computer vision systems, model choice is rarely about raw accuracy alone. This benchmark helps answer practical questions such as:
 
-**The datasets are chosen to cover a variety of image classification tasks:**
+* Which architectures are overkill for simpler datasets?
+* How does depth and skip-connection design affect generalization?
+* When does architectural complexity stop paying off?
 
-- **MNIST and FMNIST** provide simpler tasks with grayscale images, allowing for the evaluation of basic image recognition capabilities.
-- **CIFAR-10** offers a more complex task with color images, testing the models 'abilities to handle more detailed and varied data.
+These insights translate directly to production decisions in areas like document processing, medical imaging, retail vision, and autonomous systems.
 
-## 📊Project Evaluation Metrics
+---
 
-The success and effectiveness of the project will be evaluated using the following metrics: -
+## 🏗️ Architectures Evaluated
 
-- **Accuracy:** The proportion of correct predictions out of the total predictions made.
-- **Precision:** The proportion of true positive predictions out of all positive predictions made.
-- **Recall:** The proportion of true positive predictions out of all actual positives.
-- **F1-score:** The harmonic mean of precision and recall.
-- **Loss:** The value of the loss function during training and testing.
+The following CNN architectures are benchmarked:
 
-## 🚩How to Approach this Project
+* **LeNet-5** – Foundational CNN for digit recognition
+* **AlexNet** – Early deep CNN enabling large-scale vision
+* **GoogLeNet (Inception)** – Multi-scale feature extraction
+* **VGGNet** – Depth-focused architecture with uniform design
+* **ResNet** – Residual learning with skip connections
+* **Xception** – Depthwise separable convolutions
+* **SENet** – Channel-wise attention via squeeze-and-excitation
 
-- To understand the project, check out the [**Approach File**](https://github.com/Avijit-Jana/cnn-architectures-benchmark/blob/main/Approach.md).
+This mix allows comparisons across eras, design philosophies, and computational budgets.
 
-- You can download all the dependencies by running the [**requirements.txt**](https://github.com/Avijit-Jana/cnn-architectures-benchmark/blob/main/requirements.txt) file using the following command:
-    ```bash
-    pip install -r requirements.txt
-    ```
+---
 
-- Also check out the [**Final Report**](https://github.com/Avijit-Jana/cnn-architectures-benchmark/blob/main/Final_Result.md) for more details about the outcome of the project.
+## 📁 Dataset Explanation
+
+Three widely used benchmark datasets are selected to progressively increase task difficulty:
+
+* **MNIST**
+  Handwritten digits (28×28, grayscale). A sanity-check dataset for basic representation learning.
+
+* **Fashion MNIST (FMNIST)**
+  Clothing items with higher intra-class variation, still grayscale and low-resolution.
+
+* **CIFAR-10**
+  Natural images (32×32, RGB) across 10 object categories, introducing color and texture complexity.
+
+This progression exposes how architectures scale from simple pattern recognition to richer visual understanding.
+
+---
+
+## 📊 Evaluation Metrics
+
+Models are evaluated using a balanced set of classification metrics:
+
+* **Accuracy** – Overall correctness
+* **Precision** – Quality of positive predictions
+* **Recall** – Coverage of actual positives
+* **F1-Score** – Balance between precision and recall
+* **Loss Curves** – Training stability and convergence behavior
+
+Together, these metrics highlight not just *how well* a model performs, but *how* it learns.
+
+---
+
+## 🚩 How to Navigate the Project
+
+* 📘 **Architecture & Training Details**
+  [Approach.md](https://github.com/Avijit-Jana/cnn-architectures-benchmark/blob/main/Approach.md)
+
+* 📊 **Final Results & Analysis**
+  [Final_Result.md](https://github.com/Avijit-Jana/cnn-architectures-benchmark/blob/main/Final_Result.md)
+
+* ⚙️ **Install Dependencies**
+
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+These documents provide deeper insight into design choices, experimental setup, and comparative results.
+
+---
 
 <div align="middle">
 
